@@ -1,2 +1,1 @@
-# otus-gitnetwork
-test fukcing git
+My New Readme
