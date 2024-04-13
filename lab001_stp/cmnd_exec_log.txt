@@ -1,0 +1,44 @@
+#echo from sw1 to sw2
+sw1#ping 192.168.1.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.1.2, timeout is 2 seconds:
+.!!!!
+
+#echo from sw1 to sw3
+sw1#ping 192.168.1.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.1.3, timeout is 2 seconds:
+!!!!!
+
+#echo from sw2 to sw3
+sw2#ping 192.168.1.3
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 192.168.1.3, timeout is 2 seconds:
+!!!!!
+===========================
+#sw1
+Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     aabb.cc00.1000
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Desg FWD 100       128.1    Shr
+Et0/2               Desg FWD 100       128.3    Shr
+
+#sw2
+Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     aabb.cc00.2000
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Root FWD 100       128.1    Shr
+Et0/2               Desg FWD 100       128.3    Shr
+
+
+#sw3
+Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     aabb.cc00.3000
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Et0/0               Altn BLK 100       128.1    Shr
+Et0/2               Root FWD 100       128.3    Shr
+===========================
+
