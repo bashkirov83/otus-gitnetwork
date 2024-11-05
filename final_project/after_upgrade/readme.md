@@ -7,4 +7,26 @@
   
   ![][def]
 
-[def]: https://github.com/bashkirov83/otus-gitnetwork/blob/main/final_project/after_upgrade/L2Topology/isp_topology.jpg
+[def]: https://github.com/bashkirov83/otus-gitnetwork/blob/main/final_project/after_upgrade/L2Topology/isp_topology.jpg  
+
+## Описание топологии  
+  
+  В г. Красноярск арендована стойка 42 юнита для размещения серверного и коммутационного оборудования.   
+  Приобретена AS43605 с подсетью белых ip адресов /24 для абонентов и NAT  
+  Организовано подключение посредством протокола BGP к точке обмена трафиком и выходом в инетрнет. В точке стыка, выход в инетрнет и соединение с IX орагнизует вышестоящий оператор с соответствуюшим резервированием.  
+  Туда же перенесен биллинг и организована точка съема трафика для СОРМ. Перенос обусловлен тем, что съем трафика СОРМ необходим до NAT,а также необходим доступ к биллингу соответствующим службам, магистральные каналы дорогие и гонять трафик в СОРМ из Северо-Енисейска не рационально.  
+
+  Для BGP стыка используется доступное оборудование,маршрутизатор  Mikrotik CCR2004-1G-12S+2XS. На нем анонсируем AS-ку и подсеть вышестоящему оператору. От него получаем только default route чтоб избежать лишней нагрузки.  
+
+  <details>
+  <summary>
+krsk.r208f38.ccr2004] > routing bgp export 
+/routing bgp instance
+set default as=43605 out-filter=AS42773-OUT redistribute-other-bgp=yes router-id=193.46.77.1
+/routing bgp network
+add network=193.46.77.0/24 synchronize=no
+/routing bgp peer
+add in-filter=AS42773-IN name=intelcom-p2p out-filter=AS42773-OUT remote-address=164.215.66.34 remote-as=42773 \
+    ttl=default
+  </summary>
+  </details>
