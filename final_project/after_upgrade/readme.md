@@ -5,4 +5,6 @@
 После начала курсов ОТУС "Сетевой инженер" вместо выполнения ДЗ в эмуляторах, полученые навыки начали применятся при настройке оборудования.  
 Построеная сеть провайдера на момент окончания курсов выглядит следуюшим образом:
   
-  ![](https://github.com/bashkirov83/otus-gitnetwork/blob/main/final_project/after_upgrade/isp_topology.jpg)
+  ![][def]
+
+[def]: https://github.com/bashkirov83/otus-gitnetwork/blob/main/final_project/after_upgrade/L2Topology/isp_topology.jpg
