@@ -20,12 +20,10 @@
 
   <details>
   <summary>ccr2004-border-config</summary>
-krsk.r208f38.ccr2004] > routing bgp export 
-/routing bgp instance
-set default as=43605 out-filter=AS42773-OUT redistribute-other-bgp=yes router-id=193.46.77.1
-/routing bgp network
-add network=193.46.77.0/24 synchronize=no
-/routing bgp peer
-add in-filter=AS42773-IN name=intelcom-p2p out-filter=AS42773-OUT remote-address=164.215.66.34 remote-as=42773 \
-    ttl=default
+krsk.r208f38.ccr2004] > routing bgp export  
+/routing bgp instance  
+set default as=43605 out-filter=AS42773-OUT redistribute-other-bgp=yes router-id=193.46.77.1  
+/routing bgp network  
+add network=193.46.77.0/24 synchronize=no routing bgp peer  
+add in-filter=AS42773-IN name=intelcom-p2p out-filter=AS42773-OUT remote-address=164.215.66.34 remote-as=42773 ttl=default  
   </details>
