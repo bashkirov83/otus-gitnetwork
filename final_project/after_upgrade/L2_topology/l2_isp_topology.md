@@ -8,6 +8,9 @@
 Так как оборудование и схемы типовые как и настройки, немного упростим схему для наглядности убрав однотипные поселки.  
   
 #### Организация VLAN
+![][def]
+
+[def]:https://github.com/bashkirov83/otus-gitnetwork/blob/main/final_project/after_upgrade/L2_topology/l2_isp_topology.jpg 
 ##### Магистральные vlan
 |№ VLAN|Описание|Примечание|
 |-------|--------|----------|
